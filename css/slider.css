@@ -1,0 +1,270 @@
+.slcontainer {
+  position: relative;
+}
+
+.slick-dots {
+  display: block !important;
+  position: absolute;
+  bottom: 55px;
+  left: 0;
+  width: 100%;
+  padding: 0 3px;
+	text-align: center;
+}
+.slick-dots li {
+  cursor: pointer;
+	display: inline-block;
+  width: 30px;
+  background: #fff;
+  padding: 0;
+  border-right: 1px solid #fff;
+	border-radius: 30px;
+	margin: 0 5px;
+}
+.slick-dots li:last-child {
+  border: none;
+}
+.slick-dots li, .slick-dots li button {
+  outline: none;
+}
+.slick-dots li button {
+  background: #f64907;
+  border: none;
+  width: 0px;
+  height: 6px;
+  padding: 0;
+  cursor: pointer;
+  display: block;
+	border-radius: 30px;
+}
+
+.hero-slider .img--holder {
+  background-position: bottom center;
+  transform: scale(1.3) rotate(0.1deg);
+  transition: transform 8s linear;
+}
+
+.hero-slider .slide-init .img--holder {
+  transform: scale(1.3) rotate(0.1deg) !important;
+  transition: transform 0s linear;
+}
+
+.slick-active .img--holder {
+  transform: scale(1) rotate(0.1deg);
+}
+
+.slick-slide .img--holder {
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  position:relative;
+}
+
+.slick-slide .img--holder:after
+{
+	content:" ";
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	background:rgba(0,0,0,0.2);
+}
+
+.slick-slide.office-photo .img--holder {
+  background-position: bottom center;
+}
+
+.hero-slider .slick-arrow {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+	bottom:50px;
+	left:0;
+	right:0;
+	margin:auto;
+    display: none !important;
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    z-index: 9999;
+}
+
+.hero-slider .slick-arrow:focus {
+  outline: 0;
+}
+
+.hero-slider .slick-arrow:hover {
+  display: block;
+  z-index: 99;
+}
+
+.hero-slider .NextArrow {  
+    right: -50px;
+    background: url(../images/next.svg) center center no-repeat;
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+}
+
+.hero-slider .PrevArrow {
+    left: -50px;
+    background: url(../images/prev.svg) center center no-repeat;
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+}
+
+.hero-slider .NextArrow:before {
+  content: '\f105';
+}
+
+.hero-slider .PrevArrow:before {
+  content: '\f104';
+}
+
+.hero-slider .text--holder {
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  padding: 0 0 50px 0;
+  font-size: 38px;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+  text-align: center;
+}
+
+.hero-slider .text--holder h2 {
+  font-size: 38px;
+}
+
+.hero-slider .text--holder p {
+  font-family: garamond, georgia;
+  font-size: 28px;
+}
+
+.caption
+{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin: 0 auto;
+    animation-delay: 2s;
+    z-index: 9999;
+    text-align: center;
+    padding: 0 20px;
+    text-shadow: 0px 0px 30px rgb(0 0 0 / 60%);
+    align-items: center;
+    justify-content: center;
+	
+}
+.caption>div{/*display:table-cell;vertical-align:middle;*/}
+
+.caption h2
+{
+    color: #fff;
+    font-weight: 800;
+    font-size: 50px;
+	text-shadow:0px 0px 8px rgba(0,0,0,0.2);
+}
+.caption h3
+{
+    color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+    background: #f26522;
+	border-radius:2px;
+	display:inline-block;
+	margin:0;
+    padding: 6px;
+}
+
+.arrow
+{
+    
+}
+.arrow a
+{
+    width: 30px;
+    height: 50px;
+    border-radius: 30px;
+    border: solid 2px #fff;
+    display: inline-block;
+    position: relative;
+	overflow:hidden;
+}
+.arrow a:after
+{
+    content: " ";
+    position: absolute;
+    top: -12px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 2px;
+    background: #fff;
+	-webkit-animation: line 2s linear infinite;
+	animation: line 2s linear infinite;
+	-webkit-animation-delay: 0.2s;
+	animation-delay: 0.2s;
+}
+@keyframes line
+{
+	0%
+	{
+    	transform:translateY(0)
+	}
+	100%
+	{
+    	transform:translateY(100%)
+	}
+}
+
+
+@media only screen and (max-width:580px)
+{
+	.caption h2
+	{
+		font-size:30px;
+	}
+	.caption h2 small
+	{
+		font-size: 22px;
+	}
+}
+
+@media only screen and (max-width:580px)
+{
+	.hero-slider .NextArrow
+	{  
+		right: -50px;
+		background: url(../images/right-arrow.svg) center center no-repeat;
+		background-size: 30px;
+		width: 30px;
+		height: 30px;
+	}	
+	.hero-slider .PrevArrow
+	{
+		left: -50px;
+		background: url(../images/left-arrow.svg) center center no-repeat;
+		background-size: 30px;
+		width: 30px;
+		height: 30px;
+	}
+	.caption
+	{
+		left:0px;
+    	padding-left: 0px;
+		text-align:center;
+    	padding: 0 40px;
+	}
+}

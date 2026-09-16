@@ -1,0 +1,75 @@
+/**
+
+ * Owl Carousel v2.2.1
+
+ * Copyright 2013-2017 David Deutsch
+
+ * Licensed under  ()
+
+ */
+
+.owl-theme .owl-dots
+	{
+		text-align: center;
+		-webkit-tap-highlight-color: transparent;
+		position: relative;
+		bottom: 50px;
+		height: 0;
+	}
+	.owl-theme .owl-nav
+	{
+		position: absolute;
+		z-index: 999;
+	}
+	.owl-prev
+	{
+		background: #eef0f5 url(../images/right-arrow-carousel.svg) center center no-repeat;
+		background-size: 10px;
+		float: left;
+		width: 30px;
+		height: 30px;
+		position: absolute;
+		z-index: 999;
+		top: 0;
+		right: 0;
+		border-radius: 50%;
+		cursor:pointer;
+	}
+	.owl-next
+	{
+		background: #eef0f5 url(../images/left-arrow-carousel.svg) center center no-repeat;
+		background-size: 10px;
+		float: left;
+		width: 30px;
+		height: 30px;
+		position: absolute;
+		z-index: 999;
+		top: 0;
+		right: 40px;
+		border-radius: 50%;
+		cursor: pointer;
+	}
+	.owl-dots,.owl-theme .owl-nav
+	{
+		
+	}
+	.owl-theme .owl-nav [class*=owl-]{
+    color: #fff;
+    font-size: 54px;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 50%;
+    line-height: 34px;
+    text-align: center;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;}.owl-theme .owl-nav [class*=owl-]:hover{}.owl-theme .owl-nav .disabled{opacity:.5;cursor:default}.owl-theme .owl-nav.disabled+.owl-dots{margin-top:0}.owl-theme .owl-dots .owl-dot{display:inline-block;zoom:1}.owl-theme .owl-dots .owl-dot span{width:10px;height:10px;margin:5px 6px;border:solid 1px #000;border-radius:50%; display:block;-webkit-backface-visibility:visible;transition:opacity .2s ease;}.owl-theme .owl-dots .owl-dot.active span,.owl-theme .owl-dots .owl-dot:hover span{border:solid 1px #0051b2;background:none;}
+	/*.owl-item img
+	{
+		  opacity: 0.6;
+	}
+	.owl-item.center img
+	{
+		  opacity: 1;
+	}*/
