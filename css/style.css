@@ -2594,3 +2594,102 @@ a.linkbutton:hover
 {
 	display:none;
 }
+/* ===== Inner page template (About/Admission/etc.) ===== */
+.page-header
+{
+	background:linear-gradient(120deg,#437ef5,#34a853);
+	padding:60px 0;
+	text-align:center;
+	color:#fff;
+}
+.page-header h1
+{
+	font-size:36px;
+	font-weight:700;
+	margin-bottom:8px;
+}
+.page-header .breadcrumb
+{
+	font-size:14px;
+	opacity:0.9;
+}
+.page-header .breadcrumb a
+{
+	color:#fff;
+	text-decoration:underline;
+}
+.page-content
+{
+	padding:60px 20px;
+	max-width:900px;
+	margin:0 auto;
+}
+.page-content h2
+{
+	color:#437ef5;
+	font-size:26px;
+	margin:0 0 20px 0;
+	font-weight:700;
+}
+.page-content p
+{
+	font-size:16px;
+	line-height:28px;
+	color:#333;
+	margin-bottom:18px;
+	text-align:justify;
+}
+.page-content .profile-card
+{
+	display:flex;
+	gap:30px;
+	align-items:flex-start;
+	background:#fff;
+	box-shadow:0 4px 18px rgba(0,0,0,0.08);
+	border-radius:10px;
+	padding:30px;
+	margin-bottom:30px;
+}
+.page-content .profile-card img
+{
+	width:140px;
+	height:140px;
+	object-fit:cover;
+	border-radius:50%;
+	border:solid 3px #f5f5f5;
+	flex-shrink:0;
+}
+.page-content .profile-card h3
+{
+	color:#437ef5;
+	font-size:20px;
+	margin-bottom:5px;
+}
+.page-content .quote-block
+{
+	border-left:solid 4px #f64907;
+	padding:15px 25px;
+	font-style:italic;
+	background:#fafafa;
+	margin-bottom:25px;
+	font-size:17px;
+	color:#444;
+}
+.page-content .info-box
+{
+	background:#fff;
+	box-shadow:0 4px 18px rgba(0,0,0,0.08);
+	border-radius:10px;
+	padding:25px 30px;
+	margin-bottom:20px;
+}
+.page-content .info-box h4
+{
+	color:#34a853;
+	margin-bottom:8px;
+	font-size:17px;
+}
+@media(max-width:768px)
+{
+	.page-content .profile-card{flex-direction:column;align-items:center;text-align:center;}
+}
