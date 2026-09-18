@@ -255,10 +255,16 @@ li.open .dropdown{opacity:1;visibility:visible;transform:translateY(0);}
 .academic-card a:hover{text-decoration:underline;}
 
 /* ---------- Why us bento ---------- */
-.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:150px;gap:22px;}
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,170px);gap:22px;
+  grid-template-areas:
+    "big big a b"
+    "big big c d";}
 .bento-item{border-radius:var(--radius);padding:26px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;}
-.bento-item.big{grid-column:span 2;grid-row:span 2;}
-.bento-item.tall{grid-row:span 2;}
+.bento-item.big{grid-area:big;}
+.bento-item.area-a{grid-area:a;}
+.bento-item.area-b{grid-area:b;}
+.bento-item.area-c{grid-area:c;}
+.bento-item.area-d{grid-area:d;}
 .bento-item.light{background:var(--color-card);border:1px solid var(--color-border);box-shadow:var(--shadow-sm);}
 .bento-item.dark{background:linear-gradient(135deg,var(--color-primary),var(--color-primary-dark));color:#fff;}
 .bento-item.gold{background:linear-gradient(135deg,var(--color-accent-2),var(--color-accent));color:#231600;}
@@ -275,8 +281,12 @@ li.open .dropdown{opacity:1;visibility:visible;transform:translateY(0);}
 .bento-item.big .icon-wrap{width:56px;height:56px;}
 .bento-item.big h3{font-size:23px;}
 .bento-item.big p{font-size:15px;}
-@media (max-width:960px){.bento{grid-template-columns:repeat(2,1fr);grid-auto-rows:auto;}.bento-item.big,.bento-item.tall{grid-column:span 2;grid-row:span 1;}}
-@media (max-width:600px){.bento{grid-template-columns:1fr;}.bento-item.big{grid-column:span 1;}}
+@media (max-width:960px){
+  .bento{grid-template-columns:repeat(2,1fr);grid-template-rows:none;grid-template-areas:none;}
+  .bento-item{grid-area:auto !important;}
+  .bento-item.big{grid-column:span 2;}
+}
+@media (max-width:600px){.bento{grid-template-columns:1fr;}}
 
 /* ---------- Facilities ---------- */
 .facility-card{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/5;box-shadow:var(--shadow-sm);}
@@ -659,30 +669,25 @@ li.open .dropdown{opacity:1;visibility:visible;transform:translateY(0);}
         <h3>Patrician Brothers Heritage</h3>
         <p>Run by the Patrician Brothers, the school carries forward a tradition of discipline, compassion and character-building education.</p>
       </div>
-      <div class="bento-item light reveal">
+      <div class="bento-item light area-a reveal">
         <div class="icon-wrap"><svg viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 10-5-10-5z"/><path d="M6 10.5V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-5.5"/></svg></div>
         <h3>Full Academic Path</h3>
         <p>A single, continuous journey from Pre-Primary through Senior School.</p>
       </div>
-      <div class="bento-item light reveal">
+      <div class="bento-item gold area-b reveal">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" stroke="#231600"><path d="M12 21s-7-6.3-7-11a7 7 0 1 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <h3>Lohagaon, Pune</h3>
+        <p>A campus set against a natural, open landscape.</p>
+      </div>
+      <div class="bento-item light area-c reveal">
         <div class="icon-wrap"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
         <h3>Purpose-Built Campus</h3>
         <p>Dedicated computer labs, library, classrooms and sports facilities.</p>
       </div>
-      <div class="bento-item gold tall reveal">
-        <div class="icon-wrap"><svg viewBox="0 0 24 24" stroke="#231600"><path d="M12 21s-7-6.3-7-11a7 7 0 1 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
-        <h3>Lohagaon, Pune</h3>
-        <p>A campus set against a natural, open landscape at Lohagaon, Pune.</p>
-      </div>
-      <div class="bento-item light reveal">
+      <div class="bento-item light area-d reveal">
         <div class="icon-wrap"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
         <h3>Vibrant Community</h3>
         <p>A full calendar of house events, cultural days and celebrations.</p>
-      </div>
-      <div class="bento-item light reveal">
-        <div class="icon-wrap"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15h6M9 11h3"/></svg></div>
-        <h3>Simple Admissions</h3>
-        <p>A clear, guided process from enquiry to enrolment.</p>
       </div>
     </div>
   </div>
