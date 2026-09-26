@@ -290,14 +290,14 @@
   window.addEventListener('resize', resize);
   resize();
 
-  const COUNT = 1000;
+  const COUNT = 80;
   particles = Array.from({length:COUNT}, () => ({
     x: Math.random()*w,
     y: Math.random()*h,
     r: Math.random()*1.8 + 0.6,
     vx: (Math.random()-0.5)*0.15,
     vy: (Math.random()-0.5)*0.15,
-    baseAlpha: Math.random()*0.5 + 0.3,
+    baseAlpha: Math.random()*0.8 + 0.5, //increase or decrease to make particle more shiny or dull
     phase: Math.random()*Math.PI*2
   }));
 
