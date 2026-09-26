@@ -68,7 +68,12 @@
     position:relative; width:100vw; height:100vh;
     cursor:none; -webkit-user-select:none; user-select:none;
     background:var(--bg); overflow:hidden;
+    <div class="globe-stage" id="globeStage">
+    <canvas id="particles"></canvas>
+    <div class="playground" id="playground"></div>
+   </div>
   }
+
   .playground{
     position:absolute; top:50%; left:50%; will-change:transform;
     transform:translate(-50%,-50%) scale(1);
@@ -128,6 +133,8 @@
   .drag-cursor.pointing .icon-point{ display:block; }
   .drag-cursor.pointing .icon-move{ display:none; }
   .drag-cursor.pointing .icon-point{ display:block; }
+  #particles{ position:absolute; inset:0; z-index:0; pointer-events:none; }
+  .playground{ z-index:1; }
 
   /* card body: tag on top, title centred — exact Westbourne layout */
   .pg-body{
@@ -209,6 +216,7 @@
   </header>
 
   <div class="globe-stage" id="globeStage">
+    <canvas id="particles"></canvas>
     <div class="playground" id="playground"></div>
   </div>
 
@@ -269,6 +277,51 @@
   window.addEventListener('scroll', ()=>{
     header.classList.toggle('scrolled', window.scrollY > 40);
   });
+
+  (function initParticles(){
+  const canvas = document.getElementById('particles');
+  const ctx = canvas.getContext('2d');
+  let w, h, particles;
+
+  function resize(){
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  const COUNT = 60;
+  particles = Array.from({length:COUNT}, () => ({
+    x: Math.random()*w,
+    y: Math.random()*h,
+    r: Math.random()*1.8 + 0.6,
+    vx: (Math.random()-0.5)*0.15,
+    vy: (Math.random()-0.5)*0.15,
+    baseAlpha: Math.random()*0.5 + 0.3,
+    phase: Math.random()*Math.PI*2
+  }));
+
+  let t = 0;
+  function draw(){
+    t += 0.02;
+    ctx.clearRect(0,0,w,h);
+    particles.forEach(p=>{
+      p.x += p.vx; p.y += p.vy;
+      if(p.x < 0) p.x = w; if(p.x > w) p.x = 0;
+      if(p.y < 0) p.y = h; if(p.y > h) p.y = 0;
+      const alpha = p.baseAlpha * (0.5 + 0.5*Math.sin(t + p.phase));
+      ctx.beginPath();
+      const grad = ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*4);
+      grad.addColorStop(0, `rgba(148,180,255,${alpha})`);
+      grad.addColorStop(1, `rgba(148,180,255,0)`);
+      ctx.fillStyle = grad;
+      ctx.arc(p.x,p.y,p.r*4,0,Math.PI*2);
+      ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
 
   // ---- flat card playground: plain DOM/CSS, cards scattered on a pannable plane, drag to explore ----
   (function initPlayground(){
